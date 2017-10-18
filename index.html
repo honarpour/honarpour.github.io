@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    Honarpour /Code
+  </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="icon" type="image/x-icon" href="icon.png">
+  <style>
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #444;
+      background-image: url(nodes.png);
+      background-position: center top;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      font-family: "Segoe UI", Arial, sans-serif, Helvetica, Tahoma;
+      font-size: 12pt;
+    }
+
+    header {
+      max-width: 1200px;
+      display: block;
+      margin: 0 auto;
+      padding: 20px;
+      font-size: 20pt;
+      letter-spacing: 1px;
+    }
+
+    menu {
+      max-width: 1200px;
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+      background-color: #000;
+      letter-spacing: 1px;
+    }
+
+    menu ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    menu ul li {
+      margin: 0;
+      padding: 0 20px;
+      box-sizing: border-box;
+      height: 40px;
+      line-height: 40px;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    menu ul li[year] {
+      color: #5d5d5d;
+      font-size: 10pt;
+      cursor: default;
+    }
+
+    content {
+      max-width: 1200px;
+      display: block;
+      min-height: 400px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    content h1 {
+      margin: 0 0 30px 0;
+      padding: 0 0 30px 0;
+      font-size: 20pt;
+      font-weight: 500;
+      text-shadow: 2px 2px #000;
+    }
+
+    content p {
+      margin: 0 0 30px 0;
+      padding: 0;
+      line-height: 30px;
+    }
+
+    content repo {
+      display: block;
+      margin: 0 0 30px 0;
+      padding: 0;
+      line-height: 30px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    content repo:nth-last-child(2) {
+      border-bottom: 0;
+    }
+
+    content repo>button {
+      text-transform: none;
+      padding: 10px;
+      font-size: 14pt;
+    }
+
+    content repo>button:first-child {
+      margin: 0 0 15px 0;
+    }
+
+    content repo p:not(:last-child) {
+      margin: 0;
+    }
+
+    code {
+      display: block;
+      max-width: 90%;
+      max-height: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #2a2a2a;
+      font-family: monospace;
+      overflow: auto;
+      white-space: nowrap;
+    }
+
+    code[inline] {
+      display: inline-block;
+      margin: 2px 0;
+      padding: 0 5px;
+      overflow: unset;
+    }
+
+    button {
+      display: block;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ccc;
+      color: #000;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 0;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    /* Mobile only */
+
+    @media (max-width: 450px) {
+      menu ul li {
+        width: calc(50% - 4px);
+      }
+
+      menu ul li:last-child {
+        display: none;
+      }
+
+      code {
+        max-width: unset;
+      }
+    }
+
+    /* Desktop only */
+
+    @media (min-width: 450px) {
+      menu ul li:not([year]):hover {
+        background-color: #ccc;
+        color: #000;
+      }
+
+      button:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    Honarpour /Code
+  </header>
+
+  <menu>
+    <ul>
+      <li get="home">Home</li>
+      <li get="repositories">Repositories</li>
+      <li get="license">License</li>
+      <li get="contribute">Contribute</li>
+      <li year></li>
+    </ul>
+  </menu>
+
+  <content home>
+    <h1>
+      Inspired by the open source community.
+    </h1>
+    <p>
+      Welcome to my attempt at sharing what I've learned and pieces of code I find handy.
+    </p>
+    <p>
+      For example, binding
+      <code inline>$</code> to
+      <code inline>querySelector</code> like jQuery:
+    </p>
+    <code>
+      const $ = document.querySelector.bind(document);<br />
+      <br />
+      $('#somediv').innerHTML = "Lorem ipsum";<br />
+      $('body > div:first-child').innerHTML = "Lorem ipsum";
+    </code>
+    <button>
+      Too easy? See More.
+    </button>
+  </content>
+
+  <content license class="hide">
+    <h1>
+      License: MIT
+    </h1>
+    <p>
+      Code that is written by me and shared here is free to be used or altered for personal or commercial use. Note that they are
+      provided as is and I hold no responsibility for their functionality or your use of them.
+    </p>
+    <button>
+      Repositories
+    </button>
+  </content>
+
+  <content repositories class="hide">
+    <h1>
+      Latest Repositories
+    </h1>
+    <p>
+    </p>
+    <repo>
+      <button link="https://github.com/honarpour/meltstone-js">
+        MeltstoneJS
+      </button>
+      <p>
+        About: A simple and customizable engine for auto-generating minimalistic single-page websites.
+      </p>
+      <p>
+        Stack:
+        <code inline>react-app-starter</code> (see below)
+      </p>
+    </repo>
+    <repo>
+      <button link="https://github.com/honarpour/react-app-starter">
+        React App Starter
+      </button>
+      <p>
+        About: Boilerplate for a React web app.
+      </p>
+      <p>
+        Stack:
+        <code inline>React</code>,
+        <code inline>Styled Components</code>,
+        <code inline>Babel</code>,
+        <code inline>Webpack</code>,
+        <code inline>Webpack DevServer</code>,
+        <code inline>NodeJS</code>,
+        <code inline>Yarn</code>
+      </p>
+    </repo>
+    <repo>
+      <button link="https://github.com/honarpour/honarpour.github.io">
+        honarpour.github.io
+      </button>
+      <p>
+        About: The sourse code of this website.
+      </p>
+      <p>
+        Stack:
+        <code inline>HTML</code>,
+        <code inline>CSS</code>,
+        <code inline>JavaScript</code>
+      </p>
+    </repo>
+    <repo>
+      <button link="https://github.com/honarpour/google-maps-starter">
+        Google Maps Starter
+      </button>
+      <p>
+        About: Starter code to hit the ground running with Google Maps.
+      </p>
+      <p>
+        Stack:
+        <code inline>HTML</code>,
+        <code inline>CSS</code>,
+        <code inline>JavaScript</code>
+      </p>
+    </repo>
+    <repo>
+      <button link="https://github.com/honarpour/js-cheat-sheet">
+        JS Cheat Sheet
+      </button>
+      <p>
+        About: Some handy JS code to make things a bit easier and prevent repetition.
+      </p>
+      <p>
+        Stack:
+        <code inline>JavaScript</code>
+      </p>
+    </repo>
+    <repo>
+      <button link="https://github.com/honarpour/card-stack">
+        Card Stack
+      </button>
+      <p>
+        About: An interactive stack of cards. Ideal for small amounts of information such as contact info.
+      </p>
+      <p>
+        Stack:
+        <code inline>HTML</code>,
+        <code inline>CSS</code>,
+        <code inline>JavaScript</code>,
+        <code inline>jQuery</code>
+      </p>
+    </repo>
+    <repo>
+      <button link="https://github.com/honarpour/Facebook_API">
+        Facebook API
+      </button>
+      <p>
+        About: A simple example of Facebook API.
+      </p>
+      <p>
+        Stack:
+        <code inline>HTML</code>,
+        <code inline>CSS</code>,
+        <code inline>JavaScript</code>
+      </p>
+    </repo>
+    <button>
+      Contribute
+    </button>
+  </content>
+
+  <content contribute class="hide">
+    <h1>
+      Pull requests are welcome.
+    </h1>
+    <p>
+      There are no guidelines at the moment, but using
+      <code inline>ESLint</code> and
+      <code inline>Prettier</code> extensions/plugins for your code editor of choice is recommended.
+    </p>
+    <button>
+      Repositories
+    </button>
+  </content>
+
+  <script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    (function () {
+      $('li[year]').innerHTML = `v${new Date().getFullYear()}`;
+
+      $$('menu li').forEach(menuItem => {
+        menuItem.addEventListener('click', e => {
+          getContent(e);
+        });
+      });
+
+      $('content[home] button').addEventListener('click', e => {
+        getContent(null, 'repositories');
+      });
+
+      $('content[license] button').addEventListener('click', e => {
+        getContent(null, 'repositories');
+      });
+
+      $('content[repositories] button:last-child').addEventListener('click', e => {
+        getContent(null, 'contribute');
+      });
+
+      $('content[contribute] button').addEventListener('click', e => {
+        getContent(null, 'repositories');
+      });
+
+      $$('button[link]').forEach(button => {
+        button.addEventListener('click', e => {
+          const url = e.target.getAttribute('link');
+          window.open(url, '_blank');
+        });
+      });
+    })();
+
+    function getContent(e, string) {
+      const target = string || e.target.getAttribute('get');
+      if (target !== null) {
+        $$('content').forEach(contentItem => {
+          contentItem.classList.add('hide');
+        });
+        $(`content[${target}]`).classList.remove('hide');
+        window.scrollTo(0, 0);
+      }
+    }
+  </script>
+</body>
+
+</html>
