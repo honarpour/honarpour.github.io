@@ -447,9 +447,6 @@
 
     const getContent = (event, string) => {
       const target = string || event.target.getAttribute('get');
-
-      rewler({ label: 'click', payload: { target } });
-
       if (target !== null) {
         $$('content').forEach(contentItem => {
           contentItem.classList.add('hide');
@@ -457,6 +454,7 @@
         $(`content[${target}]`).classList.remove('hide');
         window.scrollTo(0, 0);
       }
+      rewler({ label: 'click', payload: { target } });
     }
 
     (() => {
@@ -488,6 +486,7 @@
         button.addEventListener('click', e => {
           const url = e.target.getAttribute('link');
           window.open(url, '_blank');
+          rewler({ label: 'click', payload: { repo: url } });
         });
       });
 
