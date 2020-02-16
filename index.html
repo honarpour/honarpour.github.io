@@ -258,7 +258,7 @@
       $('#somediv').innerHTML = "Lorem ipsum";<br />
       $('body > div:first-child').innerHTML = "Lorem ipsum";
     </code>
-    <button>
+    <button get="repositories">
       Too easy? See More.
     </button>
   </content>
@@ -282,11 +282,12 @@
       CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
       IN THE SOFTWARE.
     </p>
-    <a href="https://opensource.org/licenses/MIT" target="_blank" />https://opensource.org/licenses/MIT
-    <a>
-      <button>
-        Repositories
-      </button>
+    <a href="https://opensource.org/licenses/MIT" target="_blank">
+      https://opensource.org/licenses/MIT
+    </a>
+    <button get="repositories">
+      Repositories
+    </button>
   </content>
 
   <content repositories class="hide">
@@ -421,7 +422,7 @@
     <button link="https://github.com/honarpour?tab=repositories">
       More Repositories
     </button>
-    <button>
+    <button get="contribute">
       Contribute
     </button>
   </content>
@@ -435,7 +436,7 @@
       <code inline>ESLint</code> and
       <code inline>Prettier</code> extensions/plugins for your code editor of choice is recommended.
     </p>
-    <button>
+    <button get="repositories">
       Repositories
     </button>
   </content>
@@ -445,48 +446,36 @@
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
 
-    const getContent = (event, string) => {
-      const target = string || event.target.getAttribute('get');
-      if (target !== null) {
-        $$('content').forEach(contentItem => {
-          contentItem.classList.add('hide');
-        });
-        $(`content[${target}]`).classList.remove('hide');
-        window.scrollTo(0, 0);
-      }
-      rewler({ label: 'click', payload: { getContent: target } });
+    const getContent = e => {
+      const target = e.target.getAttribute('get');
+      $$('content').forEach(contentItem => {
+        contentItem.classList.add('hide');
+      });
+      $(`content[${target}]`).classList.remove('hide');
+      window.scrollTo(0, 0);
+      rewler({ label: 'click', payload: { content: target } });
     }
 
     (() => {
       $('li[year]').innerHTML = `v${new Date().getFullYear()}`;
 
-      $$('menu li').forEach(menuItem => {
+      $$('menu li[get]').forEach(menuItem => {
         menuItem.addEventListener('click', e => {
           getContent(e);
         });
       });
 
-      $('content[home] button').addEventListener('click', e => {
-        getContent(null, 'repositories');
-      });
-
-      $('content[license] button').addEventListener('click', e => {
-        getContent(null, 'repositories');
-      });
-
-      $('content[repositories] button:last-child').addEventListener('click', e => {
-        getContent(null, 'contribute');
-      });
-
-      $('content[contribute] button').addEventListener('click', e => {
-        getContent(null, 'repositories');
+      $$('button[get]').forEach(button => {
+        button.addEventListener('click', e => {
+          getContent(e);
+        });
       });
 
       $$('button[link]').forEach(button => {
         button.addEventListener('click', e => {
           const url = e.target.getAttribute('link');
           window.open(url, '_blank');
-          rewler({ label: 'click', payload: { repo: url } });
+          rewler({ label: 'click', payload: { link: url } });
         });
       });
 
