@@ -440,11 +440,26 @@
     </button>
   </content>
 
+  <script src="https://rewler.com/script.js" type="text/javascript"></script>
   <script>
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
 
-    (function () {
+    const getContent = (event, string) => {
+      const target = string || event.target.getAttribute('get');
+
+      rewler({ label: 'click', payload: { target } });
+
+      if (target !== null) {
+        $$('content').forEach(contentItem => {
+          contentItem.classList.add('hide');
+        });
+        $(`content[${target}]`).classList.remove('hide');
+        window.scrollTo(0, 0);
+      }
+    }
+
+    (() => {
       $('li[year]').innerHTML = `v${new Date().getFullYear()}`;
 
       $$('menu li').forEach(menuItem => {
@@ -475,18 +490,9 @@
           window.open(url, '_blank');
         });
       });
-    })();
 
-    function getContent(e, string) {
-      const target = string || e.target.getAttribute('get');
-      if (target !== null) {
-        $$('content').forEach(contentItem => {
-          contentItem.classList.add('hide');
-        });
-        $(`content[${target}]`).classList.remove('hide');
-        window.scrollTo(0, 0);
-      }
-    }
+      rewler({ label: 'pageview' });
+    })();
   </script>
 </body>
 
