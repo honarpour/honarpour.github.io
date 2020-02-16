@@ -454,7 +454,7 @@
         $(`content[${target}]`).classList.remove('hide');
         window.scrollTo(0, 0);
       }
-      rewler({ label: 'click', payload: { target } });
+      rewler({ label: 'click', payload: { getContent: target } });
     }
 
     (() => {
