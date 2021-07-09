@@ -454,7 +454,6 @@
     </button>
   </content>
 
-  <script src="https://rewler.com/script.js" type="text/javascript"></script>
   <script>
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
@@ -466,7 +465,6 @@
       });
       $(`content[${target}]`).classList.remove('hide');
       window.scrollTo(0, 0);
-      rewler({ label: 'click', payload: { content: target } });
     }
 
     (() => {
@@ -488,11 +486,8 @@
         button.addEventListener('click', e => {
           const url = e.target.getAttribute('link');
           window.open(url, '_blank');
-          rewler({ label: 'click', payload: { link: url } });
         });
       });
-
-      rewler({ label: 'pageview' });
     })();
   </script>
 </body>
