@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <title>
-    Honarpour /Code
+    Honarpour on GitHub
   </title>
   <meta name="description" content="Code repositories by Amir Honarpour." />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -94,12 +94,6 @@
       display: inline-block;
       cursor: pointer;
       transition: all 0.3s;
-    }
-
-    menu ul li[year] {
-      color: #5d5d5d;
-      font-size: 10pt;
-      cursor: default;
     }
 
     content {
@@ -212,7 +206,7 @@
     /* Desktop only */
 
     @media (min-width: 450px) {
-      menu ul li:not([year]):hover {
+      menu ul li:hover {
         background-color: #ccc;
         color: #000;
       }
@@ -227,7 +221,7 @@
 
 <body>
   <header>
-    Honarpour /Code
+    Honarpour on GitHub
   </header>
 
   <menu>
@@ -236,7 +230,6 @@
       <li get="repositories">Repositories</li>
       <li get="license">License</li>
       <li get="contribute">Contribute</li>
-      <li year></li>
     </ul>
   </menu>
 
@@ -296,6 +289,19 @@
     </h1>
     <p>
     </p>
+    <repo>
+      <button link="https://github.com/honarpour/svelte-video-app">
+        Svelte Video App
+      </button>
+      <p>
+        About: A simple Svelte video app.
+      </p>
+      <p>
+        Stack:
+        <code inline>Svelte</code>,
+        <code inline>Webpack</code>
+      </p>
+    </repo>
     <repo>
       <button link="https://github.com/honarpour/svelte-app-starter">
         Svelte App Starter
@@ -468,8 +474,6 @@
     }
 
     (() => {
-      $('li[year]').innerHTML = `v${new Date().getFullYear()}`;
-
       $$('menu li[get]').forEach(menuItem => {
         menuItem.addEventListener('click', e => {
           getContent(e);
