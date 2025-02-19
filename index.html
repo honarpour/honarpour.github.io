@@ -25,8 +25,14 @@
       background-color: #444;
       background-image: url(nodes.png);
       background-position: center top;
-      background-size: contain;
       background-repeat: no-repeat;
+      background-size: 200%;
+    }
+
+    @media (min-width: 768px) {
+      html {
+        background-size: contain;
+      }
     }
 
     body {
@@ -35,7 +41,7 @@
       width: 100%;
       height: 100%;
       color: #fff;
-      font-family: "Segoe UI", Arial, sans-serif, Helvetica, Tahoma;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 12pt;
     }
 
@@ -46,7 +52,7 @@
       padding: 20px;
       font-size: 30pt;
       letter-spacing: 1px;
-      text-shadow: 2px 2px #000;
+      text-shadow: 3px 3px #000;
     }
 
     menu {
@@ -92,11 +98,10 @@
     }
 
     content h1 {
-      margin: 0 0 50px 0;
+      margin: 10px 0 50px 0;
       padding: 0;
       font-size: 20pt;
       font-weight: 500;
-      text-shadow: 2px 2px #000;
     }
 
     content p {
@@ -113,7 +118,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 30px;
-      margin: 0;
+      margin: 30px 0 0 0;
       padding: 0;
     }
 
@@ -126,13 +131,12 @@
       font-size: 11pt;
     }
 
-    content repo>button {
-      text-transform: none;
-      padding: 10px;
+    content repo>.button {
+      padding: 5px 10px;
       font-size: 14pt;
     }
 
-    content repo>button:first-child {
+    content repo>.button:first-child {
       margin: 0 0 15px 0;
     }
 
@@ -157,22 +161,27 @@
       font-size: 10pt;
     }
 
-    button {
-      display: block;
+    .button {
+      display: inline-block;
       margin: 50px auto;
       padding: 20px;
       background-color: #ccc;
       color: #000;
-      font-weight: 700;
-      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
       border: 0;
-      letter-spacing: 1px;
       cursor: pointer;
       transition: all 0.3s;
     }
 
     .hide {
       display: none;
+    }
+
+    .centre {
+      display: block;
+      width: 80px;
     }
 
     /* Mobile only */
@@ -195,7 +204,7 @@
         color: #000;
       }
 
-      button:hover {
+      .button:hover {
         background-color: #000;
         color: #fff;
       }
@@ -222,42 +231,27 @@
   </menu>
 
   <content repositories>
-    <h1>
-      Featured Repositories
-    </h1>
     <repos>
       <repo>
-        <button link="https://github.com/honarpour/svelte-video-app">
-          Svelte Video App
-        </button>
+        <a class="button" href="https://github.com/honarpour/nextjs-starter">
+          NextJS Starter
+        </a>
         <p>
-          A simple Svelte video app.
+          Joke fetching app with A.I. translation integration.
         </p>
         <p>
           Stack:
-          <code inline>Svelte</code>,
-          <code inline>Webpack</code>
+          <code inline>Create Next App</code>,
+          <code inline>JokeAPI</code>,
+          <code inline>DeepL</code>
         </p>
       </repo>
       <repo>
-        <button link="https://github.com/honarpour/svelte-app-starter">
-          Svelte App Starter
-        </button>
-        <p>
-          Boilerplate for a Svelte web app.
-        </p>
-        <p>
-          Stack:
-          <code inline>Svelte</code>,
-          <code inline>Webpack</code>
-        </p>
-      </repo>
-      <repo>
-        <button link="https://github.com/honarpour/react-chartjs-starter">
+        <a class="button" href="https://github.com/honarpour/react-chartjs-starter">
           React ChartJS Starter
-        </button>
+        </a>
         <p>
-          A minimal data visualization project to get started with ChartJS.
+          Data visualization project that uses public Government of Canada data.
         </p>
         <p>
           Stack:
@@ -267,11 +261,37 @@
         </p>
       </repo>
       <repo>
-        <button link="https://github.com/honarpour/serverless-export-outputs">
+        <a class="button" href="https://github.com/honarpour/create-template-app">
+          Create Template App
+        </a>
+        <p>
+          Command line tool for cloning a predefined template repository. Can be published as an NPM package.
+        </p>
+        <p>
+          Stack:
+          <code inline>JavaScript</code>
+        </p>
+      </repo>
+      <repo>
+        <a class="button" href="https://github.com/honarpour/svelte-video-app">
+          Svelte Video App
+        </a>
+        <p>
+          Minimal Netflix clone.
+        </p>
+        <p>
+          Stack:
+          <code inline>Svelte</code>,
+          <code inline>Webpack</code>
+        </p>
+      </repo>
+      <repo>
+        <a class="button" href="https://github.com/honarpour/serverless-export-outputs">
           Serverless Export Outputs
-        </button>
+        </a>
         <p>
-          A Serverless plugin for exporting AWS stack outputs to a file.
+          Serverless plugin for exporting AWS stack outputs to an env or yaml file. Can be used to pass infrastructure
+          variables to the client build.
         </p>
         <p>
           Stack:
@@ -279,12 +299,12 @@
         </p>
       </repo>
       <repo>
-        <button link="https://github.com/honarpour/serverless-print-dots">
+        <a class="button" href="https://github.com/honarpour/serverless-print-dots">
           Serverless Print Dots
-        </button>
+        </a>
         <p>
-          A Serverless plugin for printing dots in Serverless log during deployment to indicate progress and
-          prevent timeouts in CI/CD platforms.
+          Serverless plugin for printing dots in Serverless log during deployment to prevent timeouts in a deployment
+          pipeline.
         </p>
         <p>
           Stack:
@@ -292,11 +312,11 @@
         </p>
       </repo>
       <repo>
-        <button link="https://github.com/honarpour/react-webgl-starter">
+        <a class="button" href="https://github.com/honarpour/react-webgl-starter">
           React WebGL Starter
-        </button>
+        </a>
         <p>
-          Boilerplate for implementing WebGL (Three.js) in React.
+          Boilerplate for implementing WebGL/ThreeJS in React for 3D scene and object rendering.
         </p>
         <p>
           Stack:
@@ -306,11 +326,11 @@
         </p>
       </repo>
       <repo>
-        <button link="https://github.com/honarpour/meltstone-js">
+        <a class="button" href="https://github.com/honarpour/meltstone-js">
           MeltstoneJS
-        </button>
+        </a>
         <p>
-          A simple and customizable engine for auto-generating minimalistic single-page websites.
+          Simple and customizable engine for auto-generating minimalistic single-page websites.
         </p>
         <p>
           Stack:
@@ -318,22 +338,9 @@
         </p>
       </repo>
       <repo>
-        <button link="https://github.com/honarpour/honarpour.github.io">
-          honarpour.github.io
-        </button>
-        <p>
-          The sourse code of this website.
-        </p>
-        <p>
-          Stack:
-          <code inline>HTML</code>,
-          <code inline>CSS</code>
-        </p>
-      </repo>
-      <repo>
-        <button link="https://github.com/honarpour/js-cheat-sheet">
+        <a class="button" href="https://github.com/honarpour/js-cheat-sheet">
           JS Cheat Sheet
-        </button>
+        </a>
         <p>
           Some handy JS code to make things a bit easier and prevent repetition.
         </p>
@@ -343,9 +350,9 @@
         </p>
       </repo>
     </repos>
-    <button link="https://github.com/honarpour?tab=repositories">
+    <a class="button centre" href="https://github.com/honarpour?tab=repositories">
       See More
-    </button>
+    </a>
   </content>
 </body>
 
