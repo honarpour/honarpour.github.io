@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Honarpour on GitHub</title>
+  <meta name="description" content="Code repositories by Amir Honarpour" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://github.githubassets.com/favicons/favicon-dark.png" />
+  <meta name="theme-color" content="#0b0c0f" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      try {
+        var pref = localStorage.getItem("theme-preference") || "system";
+        var dark = pref === "dark" || (pref === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <span class="brand">Honarpour on GitHub</span>
+
+      <nav class="site-nav">
+        <a href="https://github.com/honarpour">Profile</a>
+        <a href="https://github.com/honarpour?tab=repositories">Repositories</a>
+      </nav>
+
+      <div class="theme-toggle" role="group" aria-label="Theme">
+        <button type="button" data-theme-option="light" aria-label="Light theme" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+        <button type="button" data-theme-option="dark" aria-label="Dark theme" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+          </svg>
+        </button>
+        <button type="button" data-theme-option="system" aria-label="System theme" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="13" rx="2" />
+            <path d="M8 21h8M12 17v4" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-label="Repositories">
+      <ul class="repo-grid">
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/ai-sre-agent">
+            <span class="repo-title">
+              SRE Investigator
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">An AI agent that ingests a production alert, runs an investigation across GitHub
+              and observability data, and surfaces a cited root-cause hypothesis with actionable next steps.</p>
+            <ul class="stack">
+              <li>React+TypeScript</li>
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>Claude CLI</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/ai-rag-demo">
+            <span class="repo-title">
+              RAG Demo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">A demonstration of how RAG works with a real AWS backend that chunks and embeds
+              documents, retrieves the most relevant pieces for a question, and asks an LLM to answer using only
+              that retrieved context.</p>
+            <ul class="stack">
+              <li>HTML+JS</li>
+              <li>Python</li>
+              <li>NodeJS</li>
+              <li>AWS Lambda</li>
+              <li>AWS Bedrock</li>
+              <li>AWS S3 Vectors</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/nextjs-starter">
+            <span class="repo-title">
+              NextJS Starter
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Joke fetching app with AI translation service integration and caching.</p>
+            <ul class="stack">
+              <li>Create Next App</li>
+              <li>Tailwind</li>
+              <li>JokeAPI</li>
+              <li>DeepL</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/react-chartjs-starter">
+            <span class="repo-title">
+              React ChartJS Starter
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Visualizations based on public data from the Government of Canada.</p>
+            <ul class="stack">
+              <li>Create React App</li>
+              <li>Styled Components</li>
+              <li>ChartJS</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/react-webgl-starter">
+            <span class="repo-title">
+              React WebGL Starter
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Boilerplate for implementing WebGL/ThreeJS in React for 3D scene and object
+              rendering.</p>
+            <ul class="stack">
+              <li>Create React App</li>
+              <li>Styled Components</li>
+              <li>ThreeJS</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/create-template-app">
+            <span class="repo-title">
+              Create Template App
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Command line tool for cloning a predefined template repository. Can be published
+              as an NPM package.</p>
+            <ul class="stack">
+              <li>JavaScript</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/serverless-export-outputs">
+            <span class="repo-title">
+              Serverless Export Outputs
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Serverless plugin for exporting AWS stack outputs to an env or yaml file. Can be
+              used to pass infrastructure variables to the client build.</p>
+            <ul class="stack">
+              <li>JavaScript</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/serverless-print-dots">
+            <span class="repo-title">
+              Serverless Print Dots
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Serverless plugin for printing dots in Serverless log during deployment to
+              prevent timeouts in a deployment pipeline.</p>
+            <ul class="stack">
+              <li>JavaScript</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/meltstone-js">
+            <span class="repo-title">
+              MeltstoneJS
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Simple and customizable engine for auto-generating minimalistic single-page
+              websites.</p>
+            <ul class="stack">
+              <li>JavaScript</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/svelte-video-app">
+            <span class="repo-title">
+              Svelte Video App
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Minimal Netflix clone.</p>
+            <ul class="stack">
+              <li>Svelte</li>
+              <li>Webpack</li>
+            </ul>
+          </a>
+        </li>
+
+        <li>
+          <a class="repo-card" href="https://github.com/honarpour/svelte-app-starter">
+            <span class="repo-title">
+              Svelte App Starter
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </span>
+            <p class="repo-desc">Boilerplate for a Svelte web app, based on their webpack template.</p>
+            <ul class="stack">
+              <li>Svelte</li>
+              <li>Webpack</li>
+            </ul>
+          </a>
+        </li>
+      </ul>
+
+      <div class="see-more">
+        <a class="btn" href="https://github.com/honarpour?tab=repositories">See more on GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
